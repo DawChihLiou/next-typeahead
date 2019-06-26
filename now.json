@@ -1,1 +1,4 @@
-{"version":2,"name":"next-typeahead","builds":[{"src":"package.json","use":"@now/next"}]}
+{
+  "name": "next-typeahead",
+  "builds": [{ "src": "package.json", "use": "@now/next" }]
+}
