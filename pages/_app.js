@@ -21,7 +21,7 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <title>My page</title>
+          <title>Next Typeahead</title>
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
