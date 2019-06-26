@@ -21,7 +21,7 @@ npm i
 Your dev server with hot reload will be available at `http://localhost:3000`.
 
 ### `npm start` or `npm run start`: to run the application locally
-Your server will be available at `http://localhost:3000`.
+Your local server will be available at `http://localhost:3000`.
 
 ## References
 
