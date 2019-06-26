@@ -3,7 +3,7 @@
     "build": "next build",
     "dev": "next",
     "now-build": "next build",
-    "start": "next start"
+    "start": "npm run build && next start"
   },
   "dependencies": {
     "@material-ui/core": "^4.1.3",
