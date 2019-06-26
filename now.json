@@ -1,5 +1,0 @@
-{
-  "version": 1,
-  "name": "next-typeahead",
-  "builds": [{ "src": "package.json", "use": "@now/next" }]
-}
