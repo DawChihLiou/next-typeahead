@@ -7,15 +7,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function NoOptionsMessage(props) {
+export default function NoOptionsMessage({ innerProps, children }) {
   const classes = useStyles();
   return (
     <Typography
       color="textSecondary"
       className={classes.noOptionsMessage}
-      {...props.innerProps}
+      {...innerProps}
     >
-      {props.children}
+      {children}
     </Typography>
   );
 }

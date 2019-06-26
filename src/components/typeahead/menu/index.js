@@ -11,11 +11,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Menu(props) {
+export default function Menu({ innerProps, children }) {
   const classes = useStyles();
   return (
-    <Paper square className={classes.paper} {...props.innerProps}>
-      {props.children}
+    <Paper square className={classes.paper} {...innerProps}>
+      {children}
     </Paper>
   );
 }

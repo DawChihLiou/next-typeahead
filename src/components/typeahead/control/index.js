@@ -13,13 +13,12 @@ function InputComponent({ inputRef, ...props }) {
   return <div ref={inputRef} {...props} />;
 }
 
-export default function Control(props) {
-  const {
-    children,
-    innerProps,
-    innerRef,
-    selectProps: { TextFieldProps },
-  } = props;
+export default function Control({
+  children,
+  innerProps,
+  innerRef,
+  selectProps: { TextFieldProps },
+}) {
   const classes = useStyles();
 
   return (

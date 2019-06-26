@@ -1,17 +1,23 @@
 import MenuItem from '@material-ui/core/MenuItem';
 
-export default function Option(props) {
+export default function Option({
+  isFocused,
+  isSelected,
+  innerProps,
+  innerRef,
+  children,
+}) {
   return (
     <MenuItem
-      ref={props.innerRef}
-      selected={props.isFocused}
+      ref={innerRef}
+      selected={isFocused}
       component="div"
       style={{
-        fontWeight: props.isSelected ? 500 : 400,
+        fontWeight: isSelected ? 500 : 400,
       }}
-      {...props.innerProps}
+      {...innerProps}
     >
-      {props.children}
+      {children}
     </MenuItem>
   );
 }

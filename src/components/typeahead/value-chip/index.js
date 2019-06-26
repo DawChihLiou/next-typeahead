@@ -1,37 +1,34 @@
-import clsx from 'clsx';
-import { makeStyles, emphasize } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
 import CancelIcon from '@material-ui/icons/Cancel';
 
 const useStyles = makeStyles(theme => ({
+  valueContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flex: 1,
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
   chip: {
     margin: theme.spacing(0.5, 0.25),
   },
-  chipFocused: {
-    backgroundColor: emphasize(
-      theme.palette.type === 'light'
-        ? theme.palette.grey[300]
-        : theme.palette.grey[700],
-      0.08
-    ),
-  },
 }));
 
-export function ValueContainer({ selectProps, children }) {
-  return <div className={selectProps.classes.valueContainer}>{children}</div>;
+export function ValueContainer({ children }) {
+  const classes = useStyles();
+  return <div className={classes.valueContainer}>{children}</div>;
 }
 
-export default function ValueChip(props) {
+export default function ValueChip({ children, removeProps }) {
   const classes = useStyles();
   return (
     <Chip
       tabIndex={-1}
-      label={props.children}
-      className={clsx(classes.chip, {
-        [classes.chipFocused]: props.isFocused,
-      })}
-      onDelete={props.removeProps.onClick}
-      deleteIcon={<CancelIcon {...props.removeProps} />}
+      label={children}
+      className={classes.chip}
+      onDelete={removeProps.onClick}
+      deleteIcon={<CancelIcon {...removeProps} />}
     />
   );
 }
