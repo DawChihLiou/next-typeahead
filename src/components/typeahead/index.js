@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import Select from 'react-select';
+import Highlighter from 'react-highlight-words';
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
@@ -13,6 +14,7 @@ import NoOptionsMessage from './no-option-message';
 import ValueChip, { ValueContainer } from './value-chip';
 
 import options from './utils/options';
+import theme from '../../theme';
 
 const components = {
   Menu,
@@ -23,6 +25,17 @@ const components = {
   NoOptionsMessage,
   MultiValue: ValueChip,
 };
+
+const formatOptionLabel = ({ label }, { inputValue }) => (
+  <Highlighter
+    searchWords={[inputValue]}
+    textToHighlight={label}
+    highlightStyle={{
+      color: theme.palette.primary.dark,
+      backgroundColor: 'transparent',
+    }}
+  />
+);
 
 export default function Typeahead() {
   const [ingredients, setIngredients] = useState(null);
@@ -51,6 +64,7 @@ export default function Typeahead() {
               value={ingredients}
               onChange={handleChangeMulti}
               isMulti
+              formatOptionLabel={formatOptionLabel}
             />
           </Grid>
         </Grid>
