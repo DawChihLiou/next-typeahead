@@ -1,16 +1,19 @@
-import Link from 'next/link';
-import Header from '../src/components/header';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import Typeahead from '../src/components/typeahead';
 
 function Index() {
   return (
-    <main>
-      <Header />
-      <section>
-        <Link href="/about">
-          <a>Go to About Me</a>
-        </Link>
-      </section>
-    </main>
+    <Container maxWidth="md">
+      <Box
+        display="flex"
+        height="100vh"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Typeahead />
+      </Box>
+    </Container>
   );
 }
 
